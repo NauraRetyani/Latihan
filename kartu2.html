@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -20,6 +16,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -210,13 +207,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./kartu.html" class="nav-link active">
+                <a href="./kartu.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Card</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./kartu2.html" class="nav-link">
+                <a href="./kartu.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Card Insert</p>
                 </a>
@@ -246,12 +243,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Card</h1>
+            <h1 class="m-0">Card Insert</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Card</li>
+              <li class="breadcrumb-item active">Card Insert</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -264,53 +261,71 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row">
 
-          <div class="col-md-4">
+          <div class="col-md-5">
 
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Form</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form class="form-horizontal">
+                <div class="card-body">
+                  <div class="form-group row">
+                    <label for="input-name" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="input-name" placeholder="Name">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="input-desc" class="col-sm-2 col-form-label">Desc</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="input-desc" placeholder="Desc">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="input-img" class="col-sm-2 col-form-label">Photo</label>
+                    <div class="col-sm-10">
+                      <div class="input-group">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="input-img" name="img" accept="image/*">
+                          <label class="custom-file-label" for="input-img">Choose file</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+                <script src="dist/js/inputkartu.js"></script>
+
+                <div class="card-footer">
+                  <button type="button" class="btn btn-primary" onclick='isiData()'>Submit</button>
+                </div>
+                <!-- /.card-footer -->
+              </form>
+            </div>
+          </div>
+
+
+          <div class="col-md-4">
             <!-- Widget: user widget style 1 -->
             <div class="card card-widget widget-user">
               <!-- Add the bg color to the header using any of the bg-* classes -->
               <div class="widget-user-header text-white"
                    style="background: url('dist/img/photo1.png') center center;">
-                <h3 class="widget-user-username text-right">Naura Retyani</h3>
-                <h5 class="widget-user-desc text-right">Prodemy #10</h5>
+                <h3 class="widget-user-username text-right" id="nama"></h3>
+                <h5 class="widget-user-desc text-right" id="desc"></h5>
               </div>
               <div class="widget-user-image">
-                <img class="img-circle" src="dist/img/pfp.jpg" alt="User Avatar">
+                <img class="img-circle" id="img-data" src="dist/img/pfp.jpg" alt="User Avatar">
               </div>
+
               <div class="card-footer">
                 <div class="row">
 
-                  <div class="col-sm-4 border-right">
-                    <div class="description-block">
-                      <a href="https://www.linkedin.com/in/naura-retyani-ajisasongko-86650a190/" class="nav-link">
-                      <ion-icon size="large" name="logo-linkedin"></ion-icon>
-                      </a>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-4 border-right">
-                    <div class="description-block">
-                      <a href="#" class="nav-link">
-                      <ion-icon size="large" name="logo-twitter"></ion-icon>
-                      </a>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-4">
-                    <div class="description-block">
-                      <a href="#" class="nav-link">
-                      <ion-icon size="large" name="logo-instagram"></ion-icon>
-                      </a>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
                 </div>
-
-                <!-- /.card -->
               </div>
+
             </div>
           </div><!-- /.card -->
 
@@ -353,5 +368,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+
+<!-- bs-custom-file-input -->
+<script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<!-- Page specific script -->
+<script>
+$(function () {
+  bsCustomFileInput.init();
+});
+</script>
 </body>
 </html>
